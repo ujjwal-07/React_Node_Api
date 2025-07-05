@@ -1,4 +1,4 @@
-# 🐾 User Info App – Full Stack (React + Node.js)
+#  User Info App – Full Stack (React + Node.js)
 
 This is a **full-stack web application** that allows users to submit their details (firstname, lastname, and DOB), fetch a random dog image, and display the user’s calculated age.  
 
