@@ -1,90 +1,126 @@
-🛠️ Setup Instructions
-📦 Prerequisites
-Node.js (v16 or higher)
+# 🐾 User Info App – Full Stack (React + Node.js)
 
-npm (comes with Node)
+This is a **full-stack web application** that allows users to submit their details (firstname, lastname, and DOB), fetch a random dog image, and display the user’s calculated age.  
 
-1️⃣ Frontend (React) Setup
-Navigate to the frontend folder:
+The project is built using:  
+- 🌐 **Frontend**: React (Create React App) + TailwindCSS  
+- 🔗 **Backend**: Node.js + Express + LowDB  
 
-bash
-Copy
-Edit
-cd frontend
-Install dependencies:
+---
 
-bash
-Copy
-Edit
-npm install
-This will install React, TailwindCSS, Axios, React-Toastify, and other required packages.
+## 🛠️ Setup Instructions
 
-Start the frontend server:
+### 📦 Prerequisites
+- [Node.js](https://nodejs.org/) (v16 or higher)
+- npm (comes with Node)
 
-bash
-Copy
-Edit
-npm start
-Open your browser and visit http://localhost:3000
+---
 
-2️⃣ Backend (Node.js) Setup
-Navigate to the backend folder:
+### 1️⃣ Frontend (React) Setup
 
-bash
-Copy
-Edit
-cd backend
-Install dependencies:
+1. Navigate to the frontend folder:
+   ```bash
+   cd frontend
+2. Install dependencies:
+    ```bash
+    npm install
+3. Start the frontend:
+    ```bash
+    npm run dev
+4. React app will run on http://localhost:3000 (or similar)
 
-bash
-Copy
-Edit
-npm install
-This will install Express.js, LowDB, and other required packages.
 
-Start the backend server:
 
-bash
-Copy
-Edit
-npm start
-Backend API will run on http://localhost:5000
+### 2️⃣ Backend (Node.js API)
 
-🗃️ Why use LowDB?
-Unlike storing data in variables (which is temporary and resets every server restart), LowDB:
-✅ Persists data to a JSON file (db.json).
-✅ Provides a lightweight and simple database for small projects.
-✅ Allows easy read/write operations without requiring a full database like MongoDB.
 
-This makes it better than in-memory variables for saving user data.
+1. Navigate to the backend folder:
+    ```bash
+    cd backend
+2. Install dependencies:
+    ```bash
+    npm install
+3. Start the server:
+    ```bash
+    npm start
+4. Server will run on http://localhost:5000
 
-📡 API Endpoints
-POST /api/user
-Description: Store user details (firstname, lastname, DOB).
 
-Request Body:
 
-json
-Copy
-Edit
-{
-  "firstname": "Jane",
-  "lastname": "Doe",
-  "dob": "2005-09-10"
-}
-GET /api/user
-Description: Fetch the most recently saved user details.
 
+## API Reference
+
+#### 📝 Get Latest User
+
+
+```http
+
+  GET /api/user
+```
+
+| Parameter | Type     | Description                |
+| :-------- | :------- | :------------------------- |
+| None |   - | Fetch the most recently saved user details. |
+
+📦 Response Example:
+
+    {
+        "data": {
+            "firstname": "Ujjwal",
+            "lastname": "pandey",
+            "dob": "2002-02-21"
+        }
+    }
+
+#### 📝 Add New User
+
+```http
+  POST /api/user
+```
+
+| Parameter | Type     | Description                       |
+| :-------- | :------- | :-------------------------------- |
+| None      | - | 📄 Description: Store user details (firstname, lastname, dob).|
+
+📄 Description: Store user details (firstname, lastname, dob).
+
+| Parameter | Type     | Description                               |
+| --------- | -------- | ----------------------------------------- |
+| firstname | `string` | **Required.** User's first name.          |
+| lastname  | `string` | **Required.** User's last name.           |
+| dob       | `string` | **Required.** Date of birth (YYYY-MM-DD). |
+
+
+#### ✅ Request Body Example:
+
+    {
+    "firstname": "Jane",
+    "lastname": "Doe",
+    "dob": "2005-09-10"
+    }
+
+#### ✅ Request Body Example:
+
+    {
+        "status": "success",
+        "data": {
+            "firstname": "Ujjwal",
+            "lastname": "pandey",
+            "dob": "2002-02-21"
+        }
+    }
 
 # Clone the repository
-git clone https://github.com/your-username/user-info-app.git
+git clone https://github.com/ujjwal-07/React_Node_Api.git
 
 # Start Backend
-cd backend
-npm install
-npm start
+    cd backend
+    npm install
+    npm start
 
 # Start Frontend
-cd ../frontend
-npm install
-npm start
+    cd ../frontend
+    npm install
+    npm start
+
+
